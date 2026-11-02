@@ -41,10 +41,11 @@ nav a {
 
 .hero {
   min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 40px 10%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 60px;
 }
 
 .hero p {
@@ -63,7 +64,7 @@ nav a {
   margin-top: 15px;
 }
 
-.hero-descripation {
+.hero-description {
   max-width: 550px;
   margin-top: 25px;
   font-size: 16px;
@@ -135,11 +136,133 @@ nav a {
     font-size: 21px;
   }
 
-  .hero-descripation {
+  .hero-description {
     font-size:14px;
   }
 
   .hero-buttons {
     gap: 15px;
+  }
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visual-card {
+  width: 100%;
+  max-width: 380%;
+  min-height: 400px;
+  padding: 35px;
+  background: #101722;
+  border: 1px solid #00d4ff;
+  border-radius: 20px;
+}
+
+.visual-card p {
+  color: #00d4ff;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.visual-card h3 {
+  color: white;
+  font-size: 32px;
+  font-weight: 700px;
+  line-height: 1.3;
+  letter-spacing: -1px;
+  margin:  0 0 25px;
+  text-shadow: none;
+}
+
+.code-symbol {
+  font-size: 64px;
+  font-weight: bold;
+  color: #00d4ff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 25px rgba(0, 212, 255, 0.4);
+  animation: symbol-glow 3s ease-in-out infinite;
+}
+
+/* CARD FOOTER LABEL */
+
+.visual-card span { 
+  display: inline-block;
+  color: #a0a0a0;
+  font-size: 11px;
+  letter-spacing: 2px;
+  border-top: 1px solid #303b49;
+  padding-top: 15px;
+}
+
+/*  CARD HOVER EFFECT */
+
+.visual-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.visual-card:hover {
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.2);
+  border-color: #ffffff;
+}
+
+/*  HERO BACKGROUND GLOW  */
+
+.hero-visual {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: #00d4ff;
+  filter: blur(120px);
+  opacity: 0.15;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/*. FLOATING CARD ANIMATION  */
+
+.visual-card {
+  animation: float-card 5s ease-in-out infinite;
+}
+/* Defines the card's floating movement */
+@keyframes float-card {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+  transform: translateY(-10px);
+  }
+}
+
+/*. CODE SYMBOL GLOW ANIMATION. */
+
+@keyframes symbol-glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+  }
+
+  50% {
+    text-shadow: 0 0 25px rgba(0, 212, 255, 0.8);
+  }
+}
+
+/*.  ACCESSIBILITY: REDUCED MOTION  */
+
+@media (prefers-reduced-motion: reduce) {
+  .visual-card,
+  .code-symbol {
+    animation: none;
+    transition: none;
   }
 }
