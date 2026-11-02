@@ -67,6 +67,51 @@ export default function Home() {
           </div>
         </div>
         </section>
+
+        {/* ===== ABOUT SECTION ===== */}
+
+        <section className="about" id="about">
+
+          {/* About content */}
+          <div className="about-content">
+            <h3> I'm Rockey Kumar</h3>
+
+            <p>
+              I'm a Computer Science and Engineering graduate with an interest in software development,
+              problem-solving, and building practical digital solutions.
+            </p>
+
+            <p>
+              I'm continuously improving my programming skills and exploring modern technologies to turn
+              to turn ideas into useful applications.
+            </p>
+
+            {/* Technical skills */}
+
+            <div className="about-skills">
+              <h3>Technical Skills</h3>
+
+              <div className="skills-list">
+                <span>C</span>
+                <span>C++</span>
+                <span>Python</span>
+                <span>JavaScript</span>
+                <span>TypeScript</span>
+                <span>React</span>
+                <span>Next.js</span>
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Git</span>
+              </div>
+            </div>
+          </div>
+
+           {/* Section heading */}
+          <div className="about-heading">
+            <p>GET TO KNOW ME</p>
+            <h2>About Me</h2>
+          </div>
+        </section>
     </main>
   );
 }
